@@ -1,14 +1,14 @@
-# _Beep-Boop_
+# Beep-Boop
 
 #### _Number response program with fun retorts, 01/19/18_
 
-#### By _**Andy Grossberg**_
+#### _**Andy Grossberg**_
 
 ## Description
 
 _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 
-## _Rules for the Beep-Boop assignment_
+## Rules for the Beep-Boop assignment
   _The user will input a number and the program will respond as follows:_
 
   * Numbers that contain a 0 are replaced (all digits) with "Beep!"
@@ -19,7 +19,7 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 
 ## Methodology
 
-_The following specs are included in the program:_
+### _The following specs are included in the program:_
 
 **Take input from the user, replace some or all of the digits, then**
 **display the range from 0 to the inputted number back to them.**
@@ -52,12 +52,14 @@ _The following specs are included in the program:_
 
 * TRAP INPUT FOR non-number CHARS to make only numbers allowed.
 
+* TRAP INPUT FOR non-integer numbers.
+
 * Refactor code
 
 ## Setup/Installation Requirements
 
-* _Download the files from the repository_
-* _Open the files with the browser of your choice._
+* Download the files from the repository
+* Open the files with the browser of your choice.
 
 ## Known Bugs
 
