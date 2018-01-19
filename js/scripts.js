@@ -36,10 +36,19 @@ function doIBoop(number){
   return numberString; // returning the number as a string right now
 }
 
-function step3(){
-  // * The program replaces a number divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that."
-  //   - Example Input: 9
-  //   - Example Output: I'm sorry, Dave. I'm afraid I can't do that.
+function doIRefuseDave(number){
+  // * The program replaces number divisible by 3
+  //   with "I'm sorry, Dave. I'm afraid I can't do that."
+  //   - Example Input: 3
+  //   - Example Output: "I'm sorry, Dave. I'm afraid I can't do that."
+  numberString = Number(number); // force convert input to a number
+  if (numberString % 3 === 0) {
+    numberString = "I'm sorry, Dave. I'm afraid I can't do that.";
+  } else {
+    // numberString = parseInt(number);
+    numberString = number;
+  }
+  return numberString; // returning the number as a string right now
 }
 
 function step4(){
@@ -58,6 +67,7 @@ $(document).ready(function() {
     var myNumber = "";
     // myNumber = parseInt($('#number').val());
     myNumber = $('#number').val();
+    myNumber = doIRefuseDave(myNumber);
     myNumber = doIBoop(myNumber);
     myNumber = doIBeep(myNumber);
     // run through step functions
