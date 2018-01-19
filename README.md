@@ -57,9 +57,11 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 
 * TRAP INPUT FOR non-integer numbers. (solution combined with above)
 
-* Output results formatted to look nicer <---
+* Output results formatted to look nicer
 
-* Refactor code and clean up code
+* User can choose to loop forwards or backwards through their range.
+
+* Refactor code and clean up code <---
 
 ## Setup/Installation Requirements
 

@@ -67,16 +67,28 @@ function doIRefuseDaveBoopOrBeep(number){
   }
 }
 
-function loopTheirNumber (number) {
+function loopTheirNumber (number, direction) {
   // Runs through the range from 0 to their number
   var myGroup = "";
   var temp ="";
   var t = 0;
-  for (var i = 0; i <= number; i++){
-    temp = doIRefuseDaveBoopOrBeep(i.toString());
-    myGroup = myGroup + temp + "<br>";
-    t = t + 1;
-    if (t > 99) { break; }
+
+  // There may be more than one direction to loop or step so I chose two if's instead of if-else
+  if (direction==="Forwards") {
+    for (var i = 0; i <= number; i++){
+      temp = doIRefuseDaveBoopOrBeep(i.toString());
+      myGroup = myGroup + temp + "<br>";
+      // t = t + 1;
+      // if (t > 99) { break; }
+    }
+  }
+  if (direction==="Backwards") {
+    for (var i = number; i >= 0; i--){
+      temp = doIRefuseDaveBoopOrBeep(i.toString());
+      myGroup = myGroup + temp + "<br>";
+      t = t + 1;
+      if (t > 99) { break; }
+    }
   }
   return myGroup;
 }
@@ -104,15 +116,16 @@ $(document).ready(function() {
   $("form#number-form").submit(function(event) {
     event.preventDefault();
     $('#results-p').empty(); // empty the DOM section
-    var myNumber = "";
-    myNumber = $('#number').val();
+    // var myNumber = ""; // was this blanking the form???
+    var myNumber = $('#number').val();
+    var direction = $("input:radio[name=direction]:checked").val();
     if (isValidInput(myNumber)) {
-      myNumber = loopTheirNumber(myNumber);
+      myNumber = loopTheirNumber(myNumber, direction);
       myNumber = "<span class='myNumberFormat'>" + myNumber + "</span>";
       $('#results h2').text("RESULTS:");
       $('#results-p').append("<span class='myNumberFormat'><strong>Your Number: </strong><span class='output'>" + $('#number').val() + "</span></span><br>" +myNumber);
       $('#results').show();
     }
-    $('#number').val(''); // clear the form value
+    $('#number').val(''); // clear the text form value
   });
 });
