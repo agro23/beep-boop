@@ -108,8 +108,9 @@ $(document).ready(function() {
     myNumber = $('#number').val();
     if (isValidInput(myNumber)) {
       myNumber = loopTheirNumber(myNumber);
+      myNumber = "<span class='myNumberFormat'>" + myNumber + "</span>";
       $('#results h2').text("RESULTS:");
-      $('#results-p').append("<strong>Your Number: </strong><span class='output'>" + $('#number').val() + "</span><br>" +myNumber);
+      $('#results-p').append("<span class='myNumberFormat'><strong>Your Number: </strong><span class='output'>" + $('#number').val() + "</span></span><br>" +myNumber);
       $('#results').show();
     }
     $('#number').val(''); // clear the form value

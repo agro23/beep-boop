@@ -2,9 +2,6 @@ body {
   margin: 1.3em;
   border: none;
   padding: 1.5em;
-  /* background-color: lightgray; */
-  /*background: linear-gradient(white, darkgrey);*/
-  /*height: auto;*/
 }
 
 .myContainer {
@@ -13,23 +10,26 @@ body {
 
 .container {
   padding: 1.3em;
-  background-color: #A9A9A9;
+  background: linear-gradient(darkgrey, white);
 }
 
 .myPanel {
   padding: 1em;
 }
 
-
 .jumbotron h1 {
   text-align: center;
   text-shadow: 2px 2px 2px gray;
 }
 
-#results {
-  display: none;
-}
-
 .output {
   color: red;
+}
+
+.myNumberFormat {
+  font-size: 1.5em;
+}
+
+#results {
+  display: none;
 }
