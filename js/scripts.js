@@ -36,7 +36,6 @@ function doIRefuseDave(number){
 
 function doIBeepLong(number){ // receiving one char
   for (i = 0; i < number.length; i++) {
-    console.log("Beep Char At " + i + " = " + number.charAt(i) + " -- " + (typeof number.charAt(i)));
     if (doIBeep(number.substr(i,1)) === "Beep!"){
       return "Beep!";
       break; // exit the loop because we found the digit is 0!
@@ -47,7 +46,6 @@ function doIBeepLong(number){ // receiving one char
 
 function doIBoopLong(number){ // receiving one char
   for (i = 0; i < number.length; i++) {
-    console.log("Boop Char At " + i + " = " + number.charAt(i) + " -- " + (typeof number.charAt(i)));
     if (doIBoop(number.substr(i,1)) === "Boop!"){
       return "Boop!";
       break; // exit the loop because we found the digit is 1!
@@ -59,14 +57,10 @@ function doIBoopLong(number){ // receiving one char
 function doIRefuseDaveBoopOrBeep(number){
   var x = doIRefuseDave(number);
   if (x !== number) { // It's divisible by 3
-    console.log("x= " + x);
-    console.log("check Dave");
     return x;
   } else if (doIBoopLong(number) === "Boop!") { // It's got a 1
-    console.log("check Boop");
     return "Boop!";
   } else if (doIBeepLong(number) === "Beep!") { // It's got a 0 in it
-    console.log("check Beep");
     return "Beep!";
   } else {
     return number;
@@ -79,10 +73,8 @@ function loopTheirNumber (number) {
   var temp ="";
   var t = 0;
   for (var i = 0; i <= number; i++){
-    console.log ("I = " + i);
     temp = doIRefuseDaveBoopOrBeep(i.toString());
     myGroup = myGroup + temp + "<br>";
-    console.log("myGroup: " + myGroup)
     t = t + 1;
     if (t > 99) { break; }
   }

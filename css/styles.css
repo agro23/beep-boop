@@ -1,5 +1,29 @@
+body {
+  margin: 1.3em;
+  border: none;
+  padding: 1.5em;
+  /* background-color: lightgray; */
+  /*background: linear-gradient(white, darkgrey);*/
+  /*height: auto;*/
+}
+
+.myContainer {
+  background: radial-gradient(red 60%, gray 30%, black 10%);
+}
+
+.container {
+  padding: 1.3em;
+  background-color: #A9A9A9;
+}
+
+.myPanel {
+  padding: 1em;
+}
+
+
 .jumbotron h1 {
   text-align: center;
+  text-shadow: 2px 2px 2px gray;
 }
 
 #results {
