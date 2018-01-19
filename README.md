@@ -53,17 +53,17 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
     * I'm sorry, Dave. I'm afraid I can't do that.
     * 4
 
-* Output results formatted to look nicer <---
-
 * TRAP INPUT FOR non-number CHARS to make only numbers allowed.
 
-* TRAP INPUT FOR non-integer numbers.
+* TRAP INPUT FOR non-integer numbers. (solution combined with above)
+
+* Output results formatted to look nicer <---
 
 * Refactor code and clean up code
 
 ## Setup/Installation Requirements
 
-* Download the files from the repository
+* Download the files from the repository into appropriately named directories.
 * Open the files with the browser of your choice.
 
 ## Known Bugs
