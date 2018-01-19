@@ -82,4 +82,4 @@ _Uses HTML, CSS, javascript, and jQuery._
 
 *Distributed under the GPL*
 
-Copyright (c) 2018 **_Andy Grossber_**
+Copyright (c) 2018 **_Andy Grossberg_**
