@@ -36,7 +36,7 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
   - Example Input: 9
   - Example Output: I'm sorry, Dave. I'm afraid I can't do that.
 
-* The program replaces a number with 0 as one of its digits with "Beep!" <---
+* The program replaces a number with 0 as one of its digits with "Beep!"
   - Example Input: 40
   - Example Output: Beep!
 
@@ -44,7 +44,7 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
   - Example Input: 1000
   - Example Output: Boop!
 
-* The program runs through a loop from to the input number applying the rules to the output
+* The program runs through a loop from to the input number applying the rules to the output <---
   - Example Input: 4
   - Example Output: Beep! Boop! 2 I'm sorry, Dave. I'm afraid I can't do that. 4
 
