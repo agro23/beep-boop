@@ -3,19 +3,14 @@
 // Business Logic
 
 function doIBeep(number){
+  var numberString ="";
   // * The program replaces 0 with "Beep!"
   //   - Example Input: 0
   //   - Example Output: Beep!
-  // var numberString = number.toString();
-  numberString = number;
-  // alert ("Number = " + number + " Number String = " + numberString);
-  // alert (numberString.charAt(0));
-  // if (numberString.charAt(0) === "2") { alert("it's a 2!");}
-  // if (numberString.charCodeAt(0) === 48) { alert("it's a 0!");} // 0	DIGIT ZERO (U+0030)	feff0030
-  if (numberString.charCodeAt(0) === 48) { // had to use the UTF code for some reason
+  // alert("number's type: " + (typeof number));
+  if (number === "0") { // just be something
     numberString = "Beep!";
   } else {
-    // numberString = parseInt(number);
     numberString = number;
   }
   return numberString; // returning the number as a string right now
@@ -51,14 +46,25 @@ function doIRefuseDave(number){
   return numberString; // returning the number as a string right now
 }
 
-function step4(){
+function doIBeepLong(number){ // receiving one char
+  for (i = 0; i < number.length; i++) {
+    console.log("Char At " + i + " = " + number.charAt(i) + " -- " + (typeof number.charAt(i)));
+    // if (doIBeep(number.charAt[i]) === "Beep!"){
+    if (doIBeep(number.substr(i,1)) === "Beep!"){
+      return "Beep!";
+      break; // exit the loop because we found the digit is 0!
+    }
+  }
+  return number;
+}
+
+function step5(){ // do I Boop long
 
 }
 
-function step5(){
+function step6(){ // div by 3 already handled?
 
 }
-
 
 // User Interface Logic
 $(document).ready(function() {
@@ -67,9 +73,10 @@ $(document).ready(function() {
     var myNumber = "";
     // myNumber = parseInt($('#number').val());
     myNumber = $('#number').val();
-    myNumber = doIRefuseDave(myNumber);
-    myNumber = doIBoop(myNumber);
-    myNumber = doIBeep(myNumber);
+    myNumber = doIBeepLong(myNumber);
+    // myNumber = doIRefuseDave(myNumber);
+    // myNumber = doIBoop(myNumber);
+    // myNumber = doIBeep(myNumber); // take this out because it's redundant now.
     // run through step functions
     $('#results').text("RESULTS: "+ myNumber);
     $('#results').show();

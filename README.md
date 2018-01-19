@@ -36,7 +36,7 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
   - Example Input: 9
   - Example Output: I'm sorry, Dave. I'm afraid I can't do that.
 
-* The program replaces a number with 0 as one of its digits with "Beep!"
+* The program replaces a number with 0 as one of its digits with "Beep!" <---
   - Example Input: 40
   - Example Output: Beep!
 
@@ -55,6 +55,8 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 * TRAP INPUT FOR non-integer numbers.
 
 * Refactor code
+
+* Maybe make sure they're actually numbers (and not strings) being displayed.
 
 ## Setup/Installation Requirements
 
