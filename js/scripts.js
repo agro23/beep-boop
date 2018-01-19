@@ -7,7 +7,6 @@ function doIBeep(number){
   // * The program replaces 0 with "Beep!"
   //   - Example Input: 0
   //   - Example Output: Beep!
-  alert("Beep number's type: " + (typeof number));
   if (number === "0") { // just be something
     numberString = "Beep!";
   } else {
@@ -33,11 +32,13 @@ function doIRefuseDave(number){
   //   with "I'm sorry, Dave. I'm afraid I can't do that."
   //   - Example Input: 3
   //   - Example Output: "I'm sorry, Dave. I'm afraid I can't do that."
-  numberString = Number(number); // force convert input to a number
-  alert("Dave got: " + number + " and converted it to: " + numberString);
+  // numberString = Number(number); // force convert input to a number
+  numberString = number; // goddam javascript loose types!
+
+  // alert("Dave got: " + number + " and converted it to: " + numberString);
   if ( (numberString % 3 === 0) && (numberString > 0) ) {
     numberString = "I'm sorry, Dave. I'm afraid I can't do that.";
-    console.log("Got Dave results!");
+    // console.log("Got Dave results!");
   } else {
     // numberString = parseInt(number);
     numberString = number;
@@ -70,40 +71,45 @@ function doIBoopLong(number){ // receiving one char
 }
 
 function doIRefuseBoopOrBeep(number){
-
-    // x = doIRefuseDave(number);
-    // console.log("Dave x = " + x);
-    // x = doIBoopLong(number);
-    // console.log("Boop x = " + x);
-    // x = doIBeepLong(number);
-    // console.log("Beep x = " + x);
-
-    // x = doIRefuseDave(number);
-    // if (x === number) {
-    //   console.log("It's not a Dave number");
-    // } else {
-    //   console.log(x);
-    // }
-
-    // x = doIRefuseDave(number);
-    // if (x !== number) {
-    //   console.log("It's a Dave number");
-    // } else {
-    //   console.log(x);
-    // }
   var x = doIRefuseDave(number);
-  console.log("number = " + number + " AND x = " + x);
-  console.log("and x != number is: " + (x != number));
+  // console.log("number = " + number + " AND x = " + x);
+  // console.log("and x != number is: " + (x != number));
   if (x !== number) { // It's divisible by 3
+    console.log("x= " + x);
+    console.log("check Dave");
     return x;
   } else if (doIBoopLong(number) === "Boop!") { // It's Got a 1
+    console.log("check Boop");
     return "Boop!";
   } else if (doIBeepLong(number) === "Beep!") { // It's got a 0 in it
+    console.log("check Beep");
     return "Beep!";
   } else {
     return number;
   }
 }
+
+function loopTheirNumber (number) {
+  var myGroup = "";
+  var temp ="";
+  var t = 0;
+  // alert("number = " + (typeof number));
+  // number = parseInt(number);
+  // alert("Now it's " + (typeof number));
+  // // ************************************************
+  // // ******* make it a numerical value!!!! **********
+  // // ************************************************
+  for (var i = 0; i <= number; i++){
+    console.log ("I = " + i);
+    temp = doIRefuseBoopOrBeep(i.toString());
+    myGroup = myGroup + temp + "<br>";
+    console.log("myGroup: " + myGroup)
+    t = t + 1;
+    if (t > 99) { break; }
+  }
+  return myGroup;
+}
+
 
 // User Interface Logic
 $(document).ready(function() {
@@ -112,15 +118,24 @@ $(document).ready(function() {
     var myNumber = "";
     // myNumber = parseInt($('#number').val());
     myNumber = $('#number').val();
-    myNumber = doIRefuseBoopOrBeep(myNumber);
-
+    // validateNumber (myNumber); // *******************************
+    // alert("I have input: "+ myNumber);
+    myNumber = loopTheirNumber(myNumber);
+    // myNumber = doIRefuseBoopOrBeep(myNumber);
     // myNumber = doIBoopLong(myNumber);
     // myNumber = doIBeepLong(myNumber);
     // myNumber = doIRefuseDave(myNumber);
     // myNumber = doIBoop(myNumber);
     // myNumber = doIBeep(myNumber); // take this out because it's redundant now.
     // run through step functions
-    $('#results').text("RESULTS: "+ myNumber);
+    // $('#results').text("RESULTS: "+ myNumber);
+
+    // $('#results').text("RESULTS: " + "<br>");
+    // $('#results-p').trigger("reset") // resets the form
+    $('#results-p').empty(); // empty's the DOM at target ID
+    $('#results-p').append("<strong>Your Number: </strong><span class='output'>" + $('#number').val() + "</span><br>" +myNumber);
+    $('#number').val(''); // clear the form value
     $('#results').show();
+
   });
 });

@@ -44,19 +44,22 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
   - Example Input: 1000
   - Example Output: Boop!
 
-* The program runs through a loop from to the input number applying the rules to the output <---
+* The program runs through a loop from to the input number applying the rules to the output
   - Example Input: 4
-  - Example Output: Beep! Boop! 2 I'm sorry, Dave. I'm afraid I can't do that. 4
+  - Example Output:
+    * Beep!
+    * Boop!
+    * 2
+    * I'm sorry, Dave. I'm afraid I can't do that.
+    * 4
 
-* Output results formatted to look nicer
+* Output results formatted to look nicer <---
 
 * TRAP INPUT FOR non-number CHARS to make only numbers allowed.
 
 * TRAP INPUT FOR non-integer numbers.
 
-* Refactor code
-
-* Maybe make sure they're actually numbers (and not strings) being displayed.
+* Refactor code and clean up code
 
 ## Setup/Installation Requirements
 
