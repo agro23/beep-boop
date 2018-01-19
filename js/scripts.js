@@ -21,10 +21,19 @@ function doIBeep(number){
   return numberString; // returning the number as a string right now
 }
 
-function step2(){
+function doIBoop(number){
   // * The program replaces 1 with "Boop!"
   //   - Example Input: 1
   //   - Example Output: Boop!
+  // var numberString = number.toString();
+  numberString = number;
+  if (numberString.charAt(0) === "1") {
+    numberString = "Boop!";
+  } else {
+    // numberString = parseInt(number);
+    numberString = number;
+  }
+  return numberString; // returning the number as a string right now
 }
 
 function step3(){
@@ -49,6 +58,7 @@ $(document).ready(function() {
     var myNumber = "";
     // myNumber = parseInt($('#number').val());
     myNumber = $('#number').val();
+    myNumber = doIBoop(myNumber);
     myNumber = doIBeep(myNumber);
     // run through step functions
     $('#results').text("RESULTS: "+ myNumber);
