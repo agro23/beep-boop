@@ -5,12 +5,12 @@
 function doIBeep(number){
   // * The program replaces 0 with "Beep!"
   var numberString ="";
-  if (number === "0") { // just be something
+  if (number === "0") { 
     numberString = "Beep!";
   } else {
     numberString = number;
   }
-  return numberString; // returning the number as a string right now
+  return numberString; // returning the number as a string
 }
 
 function doIBoop(number){
@@ -20,14 +20,14 @@ function doIBoop(number){
   } else {
     numberString = number;
   }
-  return numberString; // returning the number as a string right now
+  return numberString; // returning the number as a string
 }
 
-function doIRefuseDave(number, name){ // ********** going to receive a name
-  // * Replaces number divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that."
+function doIRefuseDave(number, name){
+  // * Replaces number divisible by 3 with "I'm sorry, <name>. I'm afraid I can't do that."
   numberString = number;
   if ( (numberString % 3 === 0) && (numberString > 0) ) {
-    numberString = "I'm sorry, " + name + ". I'm afraid I can't do that."; // ******* here's where we change out the name. also uppercase/sentencecase it.
+    numberString = "I'm sorry, " + name + ". I'm afraid I can't do that.";
   } else {
     numberString = number;
   }
@@ -54,8 +54,8 @@ function doIBoopLong(number){ // receiving one char
   return number;
 }
 
-function doIRefuseDaveBoopOrBeep(number, name){ // ********* will need that name for Dave loop to send
-  var x = doIRefuseDave(number, name); // ********** here goes the name
+function doIRefuseDaveBoopOrBeep(number, name){
+  var x = doIRefuseDave(number, name);
   if (x !== number) { // It's divisible by 3
     return x;
   } else if (doIBoopLong(number) === "Boop!") { // It's got a 1
@@ -67,20 +67,19 @@ function doIRefuseDaveBoopOrBeep(number, name){ // ********* will need that name
   }
 }
 
-function loopTheirNumber (number, direction, name) { // ******* will have to receive name to avoid global
-  // Runs through the range from 0 to their number
+function loopTheirNumber (number, direction, name) {
   var myGroup = "";
   var temp ="";
   // There may be more than one direction to loop or step so I chose two if's instead of if-else
   if (direction==="Forwards") {
     for (var i = 0; i <= number; i++){
-      temp = doIRefuseDaveBoopOrBeep(i.toString(), name); // *****  Added Name
+      temp = doIRefuseDaveBoopOrBeep(i.toString(), name);
       myGroup = myGroup + temp + "<br>";
     }
   }
   if (direction==="Backwards") {
     for (var i = number; i >= 0; i--){
-      temp = doIRefuseDaveBoopOrBeep(i.toString(), name); // *****  Added Name
+      temp = doIRefuseDaveBoopOrBeep(i.toString(), name);
       myGroup = myGroup + temp + "<br>";
     }
   }
@@ -91,13 +90,11 @@ function isValidInput(number){
   if (number.match(/^[0-9]+$/) === null) {
     alert("That is not a number we accept.");
     $("#number").val(''); // clear the form value
-    // $('#results h2').empty(); // empty the DOM section
     $("#results").hide();
     return false;
   } else if ((number < 0) || (number > 99)){
     alert("Please input a number between 0 and 99.");
     $("#number").val(''); // clear the form value
-    // $('#results h2').empty(); // empty the DOM section
     $("#results").hide();
     return false;
   } else {
@@ -115,15 +112,18 @@ function getName() {
 
 // User Interface Logic
 $(document).ready(function() {
-  var name = getName();
-  $("#user-name").replaceWith(", " + name + ". P");
+  $("form#name-form").submit(function(event) {
+    event.preventDefault();
+    name = $("#username").val();
+    $("#user-name").replaceWith(", " + name + ". P");
+  });
   $("form#number-form").submit(function(event) {
     event.preventDefault();
     $("#results-p").empty(); // empty the DOM section
     var myNumber = $("#number").val();
     var direction = $("input:radio[name=direction]:checked").val();
     if (isValidInput(myNumber)) {
-      myNumber = loopTheirNumber(myNumber, direction, name); // ******* will have to pass username too to not use a global
+      myNumber = loopTheirNumber(myNumber, direction, name);
       myNumber = "<span class='myNumberFormat'>" + myNumber + "</span>";
       $("#results h2").text("RESULTS:");
       $("#results-p").append("<span class='myNumberFormat'><strong>Your Number: </strong><span class='output'>" + $("#number").val() + "</span></span><br>" +myNumber);
