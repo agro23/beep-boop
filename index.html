@@ -15,27 +15,25 @@
       </div>
       <form class="panel myPanel" id="number-form">
         <div class="well" id="number-row"> <!-- did have row -->
-          <h3>Hello, Dave. Please give me a number between 0 and 99:</h3>
+          <h3>Hello<span id="user-name">. P</span>lease give me a number between 0 and 99:</h3>
           <div class="form-group">
             <input type="text" class="form-control" id="number" placeholder="Enter a whole number">
           </div>
-
-<div class="panel myPanel">
-  <h4>Direction to loop your numbers:</h4>
-<div class="radio">
-  <label>
-    <input type="radio" name="direction" value="Forwards">
-    Forwards
-  </label>
-</div>
-<div class="radio">
-  <label>
-    <input type="radio" name="direction" value="Backwards">
-    Backwards
-  </label>
-</div>
-</div>
-
+          <div class="panel myPanel">
+            <h4>Direction to loop your numbers:</h4>
+            <div class="radio">
+              <label>
+                <input type="radio" name="direction" value="Forwards">
+                Forwards
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="direction" value="Backwards">
+                Backwards
+              </label>
+            </div>
+          </div>
           <div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
