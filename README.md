@@ -61,7 +61,9 @@ _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 
 * User can choose to loop forwards or backwards through their range.
 
-* Refactor code and clean up code <---
+* User can enter their name and the program will use it instead of "Dave".
+
+* Refactor code and clean up code
 
 ## Setup/Installation Requirements
 
