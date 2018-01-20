@@ -8,6 +8,10 @@
 
 _This is the Friday Project for Week Three of Intro to Programming at Epicodus_
 
+## Location
+
+_You can find this file at https://www.github.com/agro23/beep-boop _
+
 ## Rules for the Beep-Boop assignment
   _The user will input a number and the program will respond as follows:_
 

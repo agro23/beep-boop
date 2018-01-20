@@ -13,28 +13,18 @@
       <div class="jumbotron myContainer">
         <h1>HAL 9000 INPUT MACHINE</h1>
       </div>
-
       <form class="panel myPanel" id="name-form">
-
-<div class="well" id="name-row"> <!-- contains the whole form and results when not hidden -->
-
-        <div class="form-group">
-          <input type="text" class="form-control" id="username" placeholder="Enter your name">
+        <div class="well" id="name-row"> <!-- contains the whole form and results when not hidden -->
+          <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="Enter your name" required>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" id="name">Submit</button>
+          </div>
         </div>
-        <div>
-          <button type="submit" class="btn btn-primary" id="name">Submit</button>
-        </div>
-
-</div>
       </form>
-
-
-
       <form class="panel myPanel" id="number-form">
         <div class="well" id="number-row"> <!-- contains the whole form and results when not hidden -->
-
-
-
           <h3>Hello<span id="user-name">. P</span>lease give me a number between 0 and 99:</h3>
           <div class="form-group">
             <input type="text" class="form-control" id="number" placeholder="Enter a whole number">

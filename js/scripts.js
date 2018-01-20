@@ -5,7 +5,7 @@
 function doIBeep(number){
   // * The program replaces 0 with "Beep!"
   var numberString ="";
-  if (number === "0") { 
+  if (number === "0") {
     numberString = "Beep!";
   } else {
     numberString = number;
@@ -119,6 +119,9 @@ $(document).ready(function() {
   });
   $("form#number-form").submit(function(event) {
     event.preventDefault();
+    if ((name === "") || (name === null)) {   // trap for empty string and null!
+      name = "Dave";
+    }
     $("#results-p").empty(); // empty the DOM section
     var myNumber = $("#number").val();
     var direction = $("input:radio[name=direction]:checked").val();
